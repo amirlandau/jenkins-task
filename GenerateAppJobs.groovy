@@ -13,8 +13,6 @@ job('Nginx Job') {
         github('amirlandau/jenkins-task', 'main')
     }
     steps {
-        shell(readFileFromWorkspace('nginx/ModifyNginx.sh'))
-        
         dockerBuildAndPublish {
             repositoryName('1372022/nginx')
             registryCredentials('1372022-dockerhub')
